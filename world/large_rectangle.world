@@ -89,8 +89,8 @@
       <elevation>0</elevation>
       <heading_deg>0</heading_deg>
     </spherical_coordinates>
-    <model name='Untitled'>
-      <pose>-2.875 0.235 0 0 -0 0</pose>
+    <model name='Wall'>
+      <pose>0 0 0 0 -0 0</pose>
       <link name='Wall_1'>
         <collision name='Wall_1_Collision'>
           <geometry>

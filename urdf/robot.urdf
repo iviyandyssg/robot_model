@@ -431,7 +431,7 @@
 
                 <!-- 超声波检测的范围和数据分辨率单位m -->
                 <range>
-                    <min>0.02</min>
+                    <min>0.1</min>
                     <max>3.00</max>
                     <resolution>0.01</resolution>
                 </range>
@@ -473,7 +473,7 @@
                     </horizontal>
                 </scan>
                 <range>
-                    <min>0.02</min>
+                    <min>0.1</min>
                     <max>3</max>
                     <resolution>0.01</resolution>
                 </range>
@@ -514,7 +514,7 @@
                     </horizontal>
                 </scan>
                 <range>
-                    <min>0.02</min>
+                    <min>0.1</min>
                     <max>3</max>
                     <resolution>0.01</resolution>
                 </range>

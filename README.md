@@ -16,7 +16,7 @@ $ sudo apt install ros-$ROS_DISTRO-gazebo-*
 
 #### How to use
 
-Clone repository to your ROS workspace
+1. Clone repository to your ROS workspace
 
 ```
 $ mkdir -p colcon_ws/src
@@ -24,20 +24,20 @@ $ cd ~colcon_ws/src
 $ git clone https://github.com/iviyandyssg/robot_model.git
 ```
 
-Then building
+2. Then building
 
 ```
 $ cd ~/colcon_ws
 $ colcon build --packages-select robot_model
 ```
 
-2. Source the workspace
+3. Source the workspace
 
 ```
 $ source ~/colcon_ws/install/setup.bash
 ```
 
-3. Run
+4. Run
 
 - Task1
 
@@ -57,6 +57,13 @@ $ ros2 launch robot_model task2.launch.py
 $ ros2 launch robot_model task3.launch.py
 ```
 
-4. You can control the robot through topic **/cmd_vel** of type **geometry_msgs::msg::Twist** .
+You should see a running effect similar to the following
 
+<img src=".\example\task1.png" style="zoom:30%;" />
+
+<img src=".\example\task2.png" style="zoom:30%;" />
+
+<img src=".\example\task3.png" style="zoom:30%;" />
+
+5. You can control the robot through topic **/cmd_vel** of type **geometry_msgs::msg::Twist** .
 

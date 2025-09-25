@@ -41,7 +41,15 @@ def generate_launch_description():
     spawn_entity_cmd = Node(
         package='gazebo_ros',
         executable='spawn_entity.py',
-        arguments=['-entity', robot_name_in_model, '-file', urdf_model_path],
+        arguments=[
+            '-entity', robot_name_in_model, 
+            '-file', urdf_model_path,
+            '-x', '0.0',  # 原点X坐标
+            '-y', '0.0',  # 原点Y坐标
+            '-R', '0.0',  # Roll角（绕X轴旋转）
+            '-P', '0.0',  # Pitch角（绕Y轴旋转）
+            '-Y', '0.0'   # Yaw角（绕Z轴旋转，0表示正方向）
+            ],
         output='screen'
     )
 
@@ -62,19 +70,20 @@ def generate_launch_description():
     )
 
     # 添加noise
-    #odom_noise_cmd = Node(
-    #    package='odomnoise',
-    #    executable='odom_sim',
-    #    output='screen'
-    #)
+    odom_noise_cmd = Node(
+        package='robot_model',
+        executable='odom_node',
+        output='screen'
+    )
 
 
     ld = LaunchDescription()
+    ld.add_action(odom_noise_cmd)
     ld.add_action(start_gazebo_cmd)
     ld.add_action(spawn_entity_cmd)
     ld.add_action(robot_state_publisher_cmd)
     ld.add_action(start_rviz_cmd)
-    #ld.add_action(odom_noise_cmd)
+    
 
     return ld
 
